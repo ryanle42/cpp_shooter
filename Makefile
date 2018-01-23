@@ -10,9 +10,19 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = test
-INCLUDES = -I .
-OBJS = Game.o Piece.o Player.o Ship.o main.o Stars.o Object.o
+NAME = ft_retro
+INCLUDES = -I ./includes
+OBJS = $(addprefix ./srcs/, \
+					$(addsuffix .o, \
+							Game \
+							Piece \
+							Player \
+							Ship \
+							Stars \
+							Object \
+							main \
+						) \
+				)
 CXXFLAGS = -Wall -Werror -Wextra
 DEBUG = -g -fno-omit-frame-pointer -fsanitize=address
 
